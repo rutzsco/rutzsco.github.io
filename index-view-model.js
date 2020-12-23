@@ -14,11 +14,10 @@ function AppViewModel() {
     };
 
     function ConvertToSession(item) {
-        return new 
-        {
-            title: item.data["Title"],
-            speaker: item.data["Speaker"]
-        }
+        var session = {};
+        session.title = item.data["Title"];
+        session.speaker = item.data["Speaker"];
+        return session;
     }
 }
 
