@@ -8,7 +8,7 @@ function AppViewModel() {
     this.getSessions = function () {
         $.getJSON("https://conferenceapi.azurewebsites.net/sessions?format=json", function(data) { 
     
-            var array = Object.values(data.items);
+            var array = Object.values(data.collection.items);
             self.sessions(array)
         })
     };
