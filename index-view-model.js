@@ -4,7 +4,7 @@ function AppViewModel() {
 
     this.sessions = ko.observableArray([]);
 
-    this.getData();
+    getData();
 
 
     this.getData = function () {
