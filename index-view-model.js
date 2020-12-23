@@ -16,8 +16,8 @@ function AppViewModel() {
     function ConvertToSession(item) {
         return new 
         {
-            title = item.data["Title"],
-            speaker = item.data["Speaker"]
+            title: item.data["Title"],
+            speaker: item.data["Speaker"]
         }
     }
 }
