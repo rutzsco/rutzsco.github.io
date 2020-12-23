@@ -4,10 +4,7 @@ function AppViewModel() {
 
     this.sessions = ko.observableArray([]);
 
-    getData();
-
-
-    this.getData = function () {
+    this.getSessions = function () {
         $.getJSON("https://conferenceapi.azurewebsites.net/sessions?format=json", function(data) { 
     
             this.sessions(data.items)
@@ -16,4 +13,6 @@ function AppViewModel() {
 }
 
 // Activates knockout.js
-ko.applyBindings(new AppViewModel());
+var vm = new AppViewModel();
+ko.applyBindings(vm);
+vm.getSessions();
