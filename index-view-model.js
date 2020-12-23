@@ -8,10 +8,18 @@ function AppViewModel() {
     this.getSessions = function () {
         $.getJSON("https://conferenceapi.azurewebsites.net/sessions?format=json", function(data) { 
     
-            var array = Object.values(data.collection.items);
-            self.sessions(array)
+            var items = data.collection.items.map(ConvertToSession);
+            self.sessions(items)
         })
     };
+
+    function ConvertToSession(item) {
+        return new 
+        {
+            title = item.data["Title"],
+            speaker = item.data["Speaker"]
+        }
+    }
 }
 
 // Activates knockout.js
