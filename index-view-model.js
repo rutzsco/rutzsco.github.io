@@ -1,6 +1,4 @@
 function AppViewModel() {
-    this.firstName = "Bert";
-    this.lastName = "Bertington";
 
     var self = this;
     self.sessions = ko.observableArray([]);
