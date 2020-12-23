@@ -12,9 +12,15 @@ function AppViewModel() {
     };
 
     function ConvertToSession(item) {
+
         var session = {};
         session.title = item.data[0].value;
-        session.speaker = item.data[2].value;
+
+        if(item.data.length > 2)
+           session.speaker = item.data[2].value;
+        else 
+         session.speaker = "NA"
+         
         return session;
     }
 }
