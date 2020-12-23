@@ -15,8 +15,8 @@ function AppViewModel() {
 
     function ConvertToSession(item) {
         var session = {};
-        session.title = item.data["Title"];
-        session.speaker = item.data["Speaker"];
+        session.title = item.data[0].value;
+        session.speaker = item.data[2].value;
         return session;
     }
 }
