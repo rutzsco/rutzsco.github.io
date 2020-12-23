@@ -2,12 +2,13 @@ function AppViewModel() {
     this.firstName = "Bert";
     this.lastName = "Bertington";
 
-    this.sessions = ko.observableArray([]);
+    var self = this;
+    self.sessions = ko.observableArray([]);
 
     this.getSessions = function () {
         $.getJSON("https://conferenceapi.azurewebsites.net/sessions?format=json", function(data) { 
     
-            this.sessions(data.items)
+            self.sessions(data.items)
         })
     };
 }
